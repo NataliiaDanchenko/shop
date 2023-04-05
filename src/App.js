@@ -6,7 +6,7 @@ import Cards from "./Components/Cards/Cards";
 import Product from "./Components/Product/Product";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter( [
   {
     path: "/",
     element: <Header/>
@@ -23,7 +23,7 @@ const router = createBrowserRouter([
     path: "product/:productId",
     element: <Product/>
   }
-])
+], {basename: "/shop"})
 
 function App() {
 
