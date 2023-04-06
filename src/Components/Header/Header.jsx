@@ -12,9 +12,9 @@ const Header = () => {
                         <img src={logo} alt="img"/>
                         <div className={style.menu}>
                             <NavLink to="/">HOME</NavLink>
-                            <NavLink to="/about">ABOUT</NavLink>
-                            <NavLink to="/shop">SHOP</NavLink>
-                            <NavLink to="/contacts">CONTACTS</NavLink>
+                            <NavLink to="about">ABOUT</NavLink>
+                            <NavLink to="shop">SHOP</NavLink>
+                            <NavLink to="contacts">CONTACTS</NavLink>
                         </div>
                         <img src={basket} alt="basket"/>
                     </div>
