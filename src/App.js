@@ -4,32 +4,20 @@ import Header from "./Components/Header/Header";
 import ProductCategories from "./Components/ProductCategories/ProductCategories";
 import Cards from "./Components/Cards/Cards";
 import Product from "./Components/Product/Product";
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Header/>
-  },
-  {
-    path: "/about",
-    element: <ProductCategories/>
-  },
-  {
-    path: "/shop",
-    element: <Cards/>
-  },
-  {
-    path: "/product/:productId",
-    element: <Product/>
-  }
-], {basename: "/shop"})
+
 
 function App() {
 
   return (
       <div>
-        <RouterProvider router={router}/>
+        <Routes>
+          <Route path="/" element={<Header/>}/>
+          <Route path="/about" element={<ProductCategories/>}/>
+          <Route path="/shop" element={<Cards/>}/>
+          <Route path="/product/:productId" element={<Product/>}/>
+        </Routes>
       </div>
   )
 }
