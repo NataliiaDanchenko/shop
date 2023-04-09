@@ -3,6 +3,7 @@ import logo from "./../../assets/logo.png";
 import basket from "./../../assets/icon-basket.svg";
 import {NavLink} from "react-router-dom";
 
+
 const Header = () => {
     return (
         <div className={style.header}>
