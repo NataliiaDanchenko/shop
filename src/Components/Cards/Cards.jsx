@@ -1,4 +1,4 @@
-import {useNavigate} from "react-router-dom";
+
 import style from "./Cards.module.css";
 import card1 from "./../../assets/Collection/card1.png";
 import card2 from "./../../assets/Collection/card2.png";
@@ -6,6 +6,9 @@ import card3 from "./../../assets/Collection/card3.png";
 import card4 from "./../../assets/Collection/card4.png";
 import card5 from "./../../assets/Collection/card5.png";
 import card6 from "./../../assets/Collection/card6.png";
+import {useNavigate} from "react-router-dom";
+
+
 
 let products = [
     {
@@ -48,9 +51,8 @@ let products = [
 
 const Cards = () => {
     const navigate = useNavigate();
-
-    const showHandler = (productId) => {
-        navigate(`product/${productId}`)
+    const showHandler = () => {
+        navigate("product")
     }
 
     return (
@@ -64,8 +66,8 @@ const Cards = () => {
                             products.map((pr) => {
                                 return (
                                     <div className={style.card}>
-                                        <img src={pr.img} onClick={showHandler} alt={`img-product ${pr.id}`}/>
-                                        <div className={style.title_card}>{pr.title}</div>
+                                        <img onClick={showHandler} src={pr.img} alt={`img-product ${pr.id}`}/>
+                                        <div className={style.title_card}></div>
                                         <div className={style.price}>{pr.price}</div>
                                     </div>
                                 )
@@ -77,5 +79,4 @@ const Cards = () => {
         </div>
     )
 }
-
 export default Cards;
