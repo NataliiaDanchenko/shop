@@ -1,6 +1,6 @@
 import style from "../Cards/Cards.module.css";
 import card1 from "../../assets/Collection/card1.png";
-import {useParams} from "react-router-dom";
+//import {useParams} from "react-router-dom";
 
 
 let card =
@@ -13,8 +13,8 @@ let card =
 
 
 const Product = () => {
-   let {productI} = useParams()
-    console.log(productI)
+  // let {productI} = useParams()
+  //  console.log(productI)
     return (
         <div>
             <div className={style.card}>

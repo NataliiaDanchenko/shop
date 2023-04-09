@@ -1,0 +1,41 @@
+{
+  "products":
+  [
+    {
+      "id": "1",
+      "img": "./../../assets/Collection/card1.png",
+      "title": "Decor Plate",
+      "price": "$ 65.00 USD"
+    },
+    {
+      "id": "2",
+      "img": "./../../assets/Collection/card1.png",
+      "title": "Mint Pottery",
+      "price": "$ 75.00 USD"
+    },
+    {
+      "id": "3",
+      "img": "./../../assets/Collection/card1.png",
+      "title": "Set Of Potters",
+      "price": "$ 125.00 USD"
+    },
+    {
+      "id": "4",
+      "img": "./../../assets/Collection/card1.png",
+      "title": "Orange Ceramic",
+      "price": "$ 55.00 USD"
+    },
+    {
+      "id": "5",
+      "img": "./../../assets/Collection/card1.png",
+      "title": "Dark Bowl",
+      "price": "$ 115.00 USD"
+    },
+    {
+      "id": "6",
+      "img": "./../../assets/Collection/card1.png",
+      "title": "Square Pottery",
+      "price": "$ 75.00 USD"
+    }
+  ]
+}
