@@ -11,6 +11,7 @@ let card =
         price: "$ 65.00 USD"
     }
 
+
 const Product = () => {
   let {productI} = useParams()
   console.log(productI)
