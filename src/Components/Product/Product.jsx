@@ -1,6 +1,6 @@
 import style from "../Cards/Cards.module.css";
 import card1 from "../../assets/Collection/card1.png";
-import {Link, useParams} from "react-router-dom";
+import {useParams} from "react-router-dom";
 
 
 let card =
@@ -18,7 +18,7 @@ const Product = () => {
     return (
         <div>
             <div className={style.card}>
-                <Link to="shop/products"><img src={card.img} alt={`img-product ${card.id}`}/></Link>
+                <img src={card.img} alt={`img-product ${card.id}`}/>
                 <div className={style.title_card}>{card.title}</div>
                 <div className={style.price}>{card.price}</div></div>
         </div>
