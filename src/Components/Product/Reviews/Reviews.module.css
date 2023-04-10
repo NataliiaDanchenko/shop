@@ -1,0 +1,35 @@
+.reviews {
+
+}
+textarea::placeholder {
+    padding: 20px;
+}
+.textarea_button {
+    margin: 100px 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    padding: 20px;
+}
+button {
+    width: 230px;
+    height: 50px;
+    background-color: #F87217;
+    border: none;
+    color: white;
+    font-size: 20px;
+}
+.review_text {
+
+}
+.review {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    text-align: justify;
+}
+.review img {
+    width: 50px;
+    height: 50px;
+}

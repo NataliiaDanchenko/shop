@@ -1,4 +1,4 @@
-
+import Reviews from "./Reviews/Reviews";
 import style from "./Product.module.css"
 import card1 from "../../assets/Collection/card1.png";
 import {useParams} from "react-router-dom";
@@ -32,6 +32,7 @@ const Product = () => {
                             <button className={style.button}>{card.button}</button>
                         </div>
                     </div>
+                    <Reviews/>
                 </div>
             </div>
         </div>
