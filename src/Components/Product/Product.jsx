@@ -32,7 +32,7 @@ const Product = () => {
                             <button className={style.button}>{card.button}</button>
                         </div>
                     </div>
-                    <Reviews/>
+                    <Reviews name={card.title}/>
                 </div>
             </div>
         </div>

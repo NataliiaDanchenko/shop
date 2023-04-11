@@ -1,6 +1,9 @@
 .reviews {
 
 }
+.textarea {
+
+}
 textarea::placeholder {
     padding: 20px;
 }
