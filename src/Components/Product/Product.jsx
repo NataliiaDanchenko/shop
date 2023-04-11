@@ -2,6 +2,7 @@ import Reviews from "./Reviews/Reviews";
 import style from "./Product.module.css"
 import card1 from "../../assets/Collection/card1.png";
 import {useParams} from "react-router-dom";
+import {useState} from "react";
 
 
 let card =
@@ -16,8 +17,16 @@ let card =
 
 
 const Product = () => {
-  let {productI} = useParams()
-  console.log(productI)
+  let {product} = useParams()
+  console.log(product)
+
+    const [isProductBasket, setIsProductBasket] = useState(false);
+
+    const addProductToBasket = () => {
+      alert(`${card.title} add to basket`);
+      setIsProductBasket(true)
+    }
+
     return (
         <div>
             <div className={style.card}>
@@ -29,10 +38,15 @@ const Product = () => {
                             <div className={style.price}>{card.price}</div>
                             <div className={style.description}>{card.description}</div>
                             <div className={style.stars}></div>
-                            <button className={style.button}>{card.button}</button>
+                            {
+                                isProductBasket ?
+                                    <button className={style.button} onClick={addProductToBasket}>Product In the Basket</button> :
+                                    <button className={style.button} onClick={addProductToBasket}>Add To Basket</button>
+                            }
                         </div>
                     </div>
                     <Reviews name={card.title}/>
+
                 </div>
             </div>
         </div>

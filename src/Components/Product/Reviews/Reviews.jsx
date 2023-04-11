@@ -40,7 +40,10 @@ const Reviews = (props) => {
                 text: current,
                 data: date
         }
-        setReviews([newReview, ...reviews]);
+        if(newReview.text.length > 5){
+            setReviews([newReview, ...reviews]);
+        }
+        else {alert("Add Text Review")}
         setCurrent("");
     }
 
@@ -48,6 +51,7 @@ const Reviews = (props) => {
 
     return (
         <div className={style.reviews}>
+            <h4>Reviews: {reviews.length}</h4>
             <div className={style.textarea_button}>
                 <div className={style.textarea}>
                     <div><textarea placeholder="Add a review" name="" id="" cols="50" rows="10" onChange={currentReview} value={current}></textarea></div>
