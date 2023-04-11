@@ -43,7 +43,6 @@ const Reviews = (props) => {
         setReviews([newReview, ...reviews]);
         setCurrent("");
     }
-
     let date = new Date().toLocaleDateString();
 
     return (
