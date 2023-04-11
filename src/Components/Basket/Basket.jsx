@@ -34,7 +34,6 @@ const Basket = () => {
     }
 
 
-
     return (
         <div className={style.basket}>
             <div className="container">
