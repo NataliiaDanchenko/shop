@@ -1,7 +1,8 @@
+
 import Reviews from "./Reviews/Reviews";
 import style from "./Product.module.css"
 import card1 from "../../assets/Collection/card1.png";
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import {useState} from "react";
 
 
@@ -20,11 +21,17 @@ const Product = () => {
   let {product} = useParams()
   console.log(product)
 
-    const [isProductBasket, setIsProductBasket] = useState(false);
+    const [isProductBasket, setIsProductBasket] = useState([false]);
 
     const addProductToBasket = () => {
       alert(`${card.title} add to basket`);
-      setIsProductBasket(true)
+      setIsProductBasket([true])
+    }
+
+    const navigateBasket = useNavigate();
+
+    const showBasket = () => {
+        navigateBasket ("basket")
     }
 
     return (
@@ -40,8 +47,8 @@ const Product = () => {
                             <div className={style.stars}></div>
                             {
                                 isProductBasket ?
-                                    <button className={style.button} onClick={addProductToBasket}>Product In the Basket</button> :
-                                    <button className={style.button} onClick={addProductToBasket}>Add To Basket</button>
+                                    <button className={style.button} onMouseDown={showBasket} onClick={addProductToBasket}>Add To Basket</button> :
+                                    <button className={style.button} onClick={addProductToBasket}>Product In the Basket</button>
                             }
                         </div>
                     </div>
