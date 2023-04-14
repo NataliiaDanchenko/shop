@@ -1,6 +1,50 @@
 .basket {
-font-size: 48px;
+
+}
+.header_nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 0;
+}
+.menu {
+    display: flex;
+    gap: 35px;
+}
+.basket img {
+
+}
+.content {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 100px;
+    font-size: 36px;
 }
 .totalPrice {
 
+}
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding-top: 50px;
+}
+.basket button {
+    width: 40px;
+    height: 40px;
+}
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.button_buy {
+    margin-top: 50px;
+    width: 230px;
+    height: 60px;
+    background: #F87217;
+    color: white;
+    line-height: 60px;
+    font-size: 36px;
+    text-align: center;
 }

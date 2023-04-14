@@ -1,6 +1,9 @@
 import style from "./Basket.module.css";
 import img1 from "./../../assets/Collection/card1.png";
 import {useState} from "react";
+import {NavLink} from "react-router-dom";
+import logo from "../../assets/logo.png";
+import basket from "../../assets/icon-basket.svg";
 
 const buyBasket = {
     img: img1,
@@ -29,25 +32,53 @@ const Basket = () => {
         setPrice(price * counterBasket)
     }
 
+    const [clear, setClear] = useState(price * counterBasket);
+
+    const clearPrice = () => {
+        console.log(clear);
+        setClear(alert("Product add to basket"));
+    }
+
     const priceBasketMinus = () => {
         setPrice(price / counterBasket)
+    }
+
+    const [addImg, setAddImg] = useState([]);
+    console.log(addImg)
+    const addBasketImg = () => {
+        setAddImg([
+            {img: logo}
+        ])
     }
 
 
     return (
         <div className={style.basket}>
             <div className="container">
-                <div>
-                    <img src={buyBasket.img} alt="img"/>
+                <div className={style.header_nav}>
+                    <img src={logo} alt="img"/>
+                    <div className={style.menu}>
+                        <NavLink to="/">HOME</NavLink>
+                        <NavLink to="about">ABOUT</NavLink>
+                        <NavLink to="shop">SHOP</NavLink>
+                        <NavLink to="contacts">CONTACTS</NavLink>
+                    </div>
+                    <img src={basket} alt="basket"/>
                 </div>
-                <div>{buyBasket.title}</div>
-                <div>{buyBasket.price}</div>
-                <div>{buyBasket.button}</div>
-                <div>
-                    <button onClick={counterPlus} onMouseDown={priceBasketPlus}>+</button>{counterBasket}
-                    <button onClick={counterMinus}>-</button>
+                <div className={style.content}>
+                    <div>
+                        <img src={buyBasket.img} alt="img"/>
+                    </div>
+                    <div className={style.text}>
+                        <div>{buyBasket.title}</div>
+                        <div className={style.buttons}>
+                            <button onClick={counterPlus} onMouseDown={priceBasketPlus}>+</button>{counterBasket}
+                            <button onClick={counterMinus}>-</button>
+                        </div>
+                        <div className={style.totalPrice} onMouseDown={priceBasketMinus}>{price} $</div>
+                        <div className={style.button_buy} onClick={clearPrice} onMouseDown={addBasketImg}>Buy</div>
+                    </div>
                 </div>
-                <div className={style.totalPrice} onMouseDown={priceBasketMinus}>{price}</div>
             </div>
         </div>
     )

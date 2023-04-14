@@ -5,28 +5,44 @@ import img3 from "./../../assets/Product-categories/plates-intro.png";
 import between from "./../../assets/Product-categories/between.png";
 import goldBlackPottery from "./../../assets/Gold-black-pottery/gold-black-things.png";
 import orangeCeramic from "./../../assets/Orange-ceramic/orange-ceramic-thinks.png";
+import logo from "../../assets/logo.png";
+import {NavLink} from "react-router-dom";
+import basket from "../../assets/icon-basket.svg";
 
 const ProductCategories = () => {
     return (
         <div className={style.product_categories}>
-            <div className={style.titleTitle}>
-                <div className={style.overTitle}>PRODUCT CATEGORIES</div>
-                <div className={style.title}>Porcelain<img src={between} alt="&"/>Pottery</div>
+            <div className="container">
+                <div className={style.header_nav}>
+                    <img src={logo} alt="img"/>
+                    <div className={style.menu}>
+                        <NavLink to="/">HOME</NavLink>
+                        <NavLink to="about">ABOUT</NavLink>
+                        <NavLink to="shop">SHOP</NavLink>
+                        <NavLink to="contacts">CONTACTS</NavLink>
+                    </div>
+                    <img src={basket} alt="basket"/>
+                </div>
+                <div className={style.titleTitle}>
+                    <div className={style.overTitle}>PRODUCT CATEGORIES</div>
+                    <div className={style.title}>Porcelain<img src={between} alt="&"/>Pottery</div>
+                </div>
+                <div className={style.flex_img}>
+                    <div className={style.vasesImg}>
+                        <img src={img1} alt="1"/>
+                        <div className={style.vases}>VASES</div>
+                    </div>
+                    <div className={style.mugsImg}>
+                        <img src={img2} alt="2"/>
+                        <div className={style.mugs}>MUGS</div>
+                    </div>
+                    <div className={style.platesImg}>
+                        <img src={img3} alt="3"/>
+                        <div className={style.plates}>PLATES</div>
+                    </div>
+                </div>
             </div>
-            <div className={style.flex_img}>
-                <div className={style.vasesImg}>
-                    <img src={img1} alt="1"/>
-                    <div className={style.vases}>VASES</div>
-                </div>
-                <div className={style.mugsImg}>
-                    <img src={img2} alt="2"/>
-                    <div className={style.mugs}>MUGS</div>
-                </div>
-                <div className={style.platesImg}>
-                    <img src={img3} alt="3"/>
-                    <div className={style.plates}>PLATES</div>
-                </div>
-            </div>
+
 
             <div className="container">
                 <div className={style.flexText}>

@@ -1,8 +1,8 @@
 .cards {
     display: flex;
-    padding-top: 100px;
 }
 .titleTitle {
+    padding-top: 70px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -33,4 +33,14 @@
 }
 .card {
 
+}
+.header_nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 0;
+}
+.menu {
+    display: flex;
+    gap: 35px;
 }

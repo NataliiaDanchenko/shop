@@ -6,7 +6,9 @@ import card3 from "./../../assets/Collection/card3.png";
 import card4 from "./../../assets/Collection/card4.png";
 import card5 from "./../../assets/Collection/card5.png";
 import card6 from "./../../assets/Collection/card6.png";
-import {useNavigate} from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
+import logo from "../../assets/logo.png";
+import basket from "../../assets/icon-basket.svg";
 
 
 
@@ -58,6 +60,16 @@ const Cards = () => {
     return (
         <div className={style.cards}>
             <div className="container">
+                <div className={style.header_nav}>
+                    <img src={logo} alt="img"/>
+                    <div className={style.menu}>
+                        <NavLink to="/">HOME</NavLink>
+                        <NavLink to="about">ABOUT</NavLink>
+                        <NavLink to="shop">SHOP</NavLink>
+                        <NavLink to="contacts">CONTACTS</NavLink>
+                    </div>
+                    <img src={basket} alt="basket"/>
+                </div>
                 <div className={style.titleTitle}>
                     <div className={style.overTitle}>OUR ONLINE STORE</div>
                     <div className={style.title}>Pottery Collection</div>

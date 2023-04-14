@@ -47,3 +47,14 @@ button:hover {
     background: #6C6C6C;;
     cursor: pointer;
 }
+
+.header_nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 0;
+}
+.menu {
+    display: flex;
+    gap: 35px;
+}

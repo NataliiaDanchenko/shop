@@ -2,8 +2,10 @@
 import Reviews from "./Reviews/Reviews";
 import style from "./Product.module.css"
 import card1 from "../../assets/Collection/card1.png";
-import {useNavigate, useParams} from "react-router-dom";
+import {NavLink, useNavigate, useParams} from "react-router-dom";
 import {useState} from "react";
+import logo from "../../assets/logo.png";
+import basket from "../../assets/icon-basket.svg";
 
 
 let card =
@@ -38,6 +40,16 @@ const Product = () => {
         <div>
             <div className={style.card}>
                 <div className="container">
+                    <div className={style.header_nav}>
+                        <img src={logo} alt="img"/>
+                        <div className={style.menu}>
+                            <NavLink to="/">HOME</NavLink>
+                            <NavLink to="about">ABOUT</NavLink>
+                            <NavLink to="shop">SHOP</NavLink>
+                            <NavLink to="contacts">CONTACTS</NavLink>
+                        </div>
+                        <img src={basket} alt="basket"/>
+                    </div>
                     <div className={style.product_content}>
                         <img src={card.img} alt={`img-product ${card.id}`}/>
                         <div className={style.text}>
