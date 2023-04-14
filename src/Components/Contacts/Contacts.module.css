@@ -26,6 +26,7 @@ textarea::placeholder {
     padding: 0;
     box-sizing: border-box;
 }
+
 .sub {
     border: solid 1px #A52424;
     background: #fff;
