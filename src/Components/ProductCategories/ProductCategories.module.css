@@ -91,13 +91,17 @@ h4 {
 }
 .flex_goldBlackPottery {
     display: flex;
-    gap: 100px;
+    gap: 200px;
     align-items: center;
 }
 .flex_orangeCeramic {
     display: flex;
-    gap: 100px;
+    gap: 300px;
     align-items: center;
+}
+
+p {
+    text-align: justify;
 }
 .item1 {
     background: url("./../../assets/Gold-black-pottery/gold-black-background.png");
@@ -106,6 +110,7 @@ h4 {
     text-align: center;
     width: 100%;
 }
+
 .item2 h5 {
     font-size: 24px;
     font-weight: 700;

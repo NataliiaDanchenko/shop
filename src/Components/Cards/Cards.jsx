@@ -79,7 +79,7 @@ const Cards = () => {
                                 return (
                                     <div className={style.card}>
                                         <img onClick={showHandler} src={pr.img} alt={`img-product ${pr.id}`}/>
-                                        <div className={style.title_card}></div>
+                                        <div className={style.title_card}>{pr.title}</div>
                                         <div className={style.price}>{pr.price}</div>
                                     </div>
                                 )
