@@ -26,6 +26,10 @@
     width: 350px;
     height: 473px;
 }
+.wrapper img:hover {
+    border: solid #6c6c6c;
+    cursor: pointer;
+}
 .title {
     font-size: 40px;
     font-weight: 700;
