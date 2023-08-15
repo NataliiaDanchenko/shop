@@ -1,31 +1,39 @@
-import logo from "./../assets/logo.png";
-import basket from "./../assets/icon-basket.svg";
-import between from "./../assets/Product-categories/between.png";
-import vases from "./../assets/Product-categories/vase-intro.png";
-import mugs from "./../assets/Product-categories/mugs-intro.png";
-import plates from "./../assets/Product-categories/plates-intro.png";
-import blackGold from "./../assets/Gold-black-pottery/gold-black-things.png";
-import orangeCeramic from "./../assets/Orange-ceramic/orange-ceramic-thinks.png";
+import logo from './../assets/logo.png';
+import basket from "../assets/icon-basket.svg";
+import between from "../assets/Product-categories/between.png";
+import vases from "../assets/Product-categories/vase-intro.png";
+import mugs from "../assets/Product-categories/mugs-intro.png";
+import plates from "../assets/Product-categories/plates-intro.png";
+import blackGold from "../assets/Gold-black-pottery/gold-black-things.png";
+import orangeCeramic from "../assets/Orange-ceramic/orange-ceramic-thinks.png";
 
-let state = {
+import card1 from "../assets/Collection/card1.png";
+import card2 from "../assets/Collection/card2.png";
+import card3 from "../assets/Collection/card3.png";
+import card4 from "../assets/Collection/card4.png";
+import card5 from "../assets/Collection/card5.png";
+import card6 from "../assets/Collection/card6.png";
+
+
+const state = {
     header: {
         links: [
             {
                 name: "HOME",
-                address: "/"
+                path: "/"
 
             },
             {
                 name: "ABOUT",
-                address: "/about"
+                path: "/about"
             },
             {
                 name: "SHOP",
-                address: "/shop"
+                path: "/cards"
             },
             {
                 name: "CONTACTS",
-                address: "/contacts"
+                path: "/contacts"
             }
         ],
         logo: {
@@ -50,7 +58,7 @@ let state = {
         title2: "Pottery",
         imgVases: vases,
         vases: "VASES",
-        img: mugs,
+        imgMugs: mugs,
         mugs: "MUGS",
         imgPlates: plates,
         plates: "PLATES",
@@ -67,11 +75,50 @@ let state = {
         text2: "Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore dolore aua. Ut enim ad minim veniam, quis nostrud exercitationulco laboris nisi ut aliquip ex ea commodo consequatuisaute.",
         img2: orangeCeramic
     },
-    cards: {
+    productData: {
         overTitle: "OUR ONLINE STORE",
-        title: "Pottery Collection"
+        title: "Pottery Collection",
+        cards: [
+            {
+                id: 1,
+                img: card1,
+                title: "Decor Plate",
+                price: "$ 65.00 USD"
+            },
+            {
+                id: 2,
+                img: card2,
+                title: "Mint Pottery",
+                price: "$ 75.00 USD"
+            },
+            {
+                id: 3,
+                img: card3,
+                title: "Set Of Potters",
+                price: "$ 125.00 USD"
+            },
+            {
+                id: 4,
+                img: card4,
+                title: "Orange Ceramic",
+                price: "$ 55.00 USD"
+            },
+            {
+                id: 5,
+                img: card5,
+                title: "Dark Bowl",
+                price: "$ 115.00 USD"
+            },
+            {
+                id: 6,
+                img: card6,
+                title: "Square Pottery",
+                price: "$ 75.00 USD"
+            }
+        ]
     }
 
 }
 
-export default state;
+
+export { state };

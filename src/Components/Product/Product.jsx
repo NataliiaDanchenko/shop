@@ -1,74 +1,82 @@
-
+//import JSON from "./../../data/data2.json";
 import Reviews from "./Reviews/Reviews";
 import style from "./Product.module.css"
-import card1 from "../../assets/Collection/card1.png";
-import {NavLink, useNavigate, useParams} from "react-router-dom";
+import {useParams, useNavigate} from "react-router-dom";
 import {useState} from "react";
-import logo from "../../assets/logo.png";
-import basket from "../../assets/icon-basket.svg";
 
 
-let card =
-    {
-        id: 1,
-        img: card1,
-        title: "Decor Plate",
-        price: "$ 65.00 USD",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod sit amet mi id scelerisque. Maecenas interdum lectus elementum eros porttitor, nec convallis est iaculis. Donec iaculis a nunc at sagittis. Cras pharetra lorem in tempor mollis. Nullam in est sed mi vulputate mattis. Duis dignissim blandit massa vel dictum. Vivamus semper pretium hendrerit. Nulla facilisi. Vestibulum dignissim cursus volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras at auctor velit. Nullam posuere augue leo. Fusce lobortis est eros, nec fermentum nisl blandit eget.",
-        button: "Buy"
-    }
+import {useEffect} from "react";
 
 
-const Product = () => {
-  let {product} = useParams()
-  console.log(product)
+
+const Product = (props) => {
+
+    const [productCard, setProductCard] = useState({
+        img: '',
+        title: '',
+        price: ''
+    });
+
+    let param = useParams()
+    //const productId = params.id;
+    //console.log(productId)
+    console.log(param)
+
+    useEffect(() => {
+          
+        const x = (item) => {
+            item = props.product.find(pr => pr.id == param.id);
+            setProductCard(item)
+            return item;
+        }
+        console.log(x())
+            
+    }, [])
+
+
 
     const [isProductBasket, setIsProductBasket] = useState([false]);
 
     const addProductToBasket = () => {
-      alert(`${card.title} add to basket`);
+      alert(`${productCard.title} add to basket`);
       setIsProductBasket([true])
     }
 
     const navigateBasket = useNavigate();
+    console.log(navigateBasket)
 
     const showBasket = () => {
-        navigateBasket ("basket")
+        navigateBasket (`/basket/${props.product.id}`)
     }
 
     return (
-        <div>
-            <div className={style.card}>
+            <div className={style.product}>
                 <div className="container">
-                    <div className={style.header_nav}>
-                        <img src={logo} alt="img"/>
-                        <div className={style.menu}>
-                            <NavLink to="/">HOME</NavLink>
-                            <NavLink to="about">ABOUT</NavLink>
-                            <NavLink to="shop">SHOP</NavLink>
-                            <NavLink to="contacts">CONTACTS</NavLink>
-                        </div>
-                        <img src={basket} alt="basket"/>
-                    </div>
                     <div className={style.product_content}>
-                        <img src={card.img} alt={`img-product ${card.id}`}/>
-                        <div className={style.text}>
-                            <div className={style.title_card}>{card.title}</div>
-                            <div className={style.price}>{card.price}</div>
-                            <div className={style.description}>{card.description}</div>
-                            <div className={style.stars}></div>
+                                    <div className={style.text}>
+                                        <div><img src={productCard.img} alt={`img-product ${productCard.id}`}/></div>
+                                        <div className={style.title_card}>{productCard.title}</div>
+                                        <div className={style.price}>{productCard.price}</div>
+                                    </div>
+                                  
+
+
+
+                    </div>
+
+                    <div className={style.stars}></div>
+                    <div>
                             {
                                 isProductBasket ?
                                     <button className={style.button} onMouseDown={showBasket} onClick={addProductToBasket}>Add To Basket</button> :
                                     <button className={style.button} onClick={addProductToBasket}>Product In the Basket</button>
                             }
                         </div>
-                    </div>
-                    <Reviews name={card.title}/>
 
+
+                    <Reviews name={productCard.title}/>
                 </div>
             </div>
-        </div>
     )
 }
 

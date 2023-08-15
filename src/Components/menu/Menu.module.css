@@ -1,0 +1,31 @@
+.menu_menu {}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header_nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 0;
+
+}
+
+.menu {
+    display: flex;
+    gap: 35px;
+
+}
+
+.menu a {
+    color: #AC1313;
+    font-weight: 600;
+}
