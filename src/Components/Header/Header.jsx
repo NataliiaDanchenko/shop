@@ -1,4 +1,5 @@
 import style from "./Header.module.css";
+import Button from "../../UI/select/buttons/Button";
 
 
 
@@ -15,7 +16,8 @@ const Header = (props) => {
                                     <div>{props.title.title2}</div>
                                 </div>
                                 <div className={style.subTitle}>{props.title.subTitle}</div>
-                                <div className={style.button}>{props.title.button}</div>
+                                <Button buttons={{name: 'SHOP COLLECTION'}} />
+                               
                             </div>
                             <div className={style.right}></div>
                         </div>

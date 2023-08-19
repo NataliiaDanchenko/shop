@@ -47,7 +47,8 @@ const state = {
             title1: "Unique Porcelain",
             title2: "Stone Collection",
             subTitle: "Unique & modern pottery made by our master in porcelain & stones",
-            button: "SHOP COLLECTION"
+            buttonHeader: "SHOP COLLECTION", 
+            buttonCard: ['Stone, Ceramic']
         }
     },
 
@@ -83,37 +84,49 @@ const state = {
                 id: 1,
                 img: card1,
                 title: "Decor Plate",
-                price: "$ 65.00 USD"
+                price: "$ 65.00 USD",
+                reviews: '6 reviews',
+                material: 'ceramic'
             },
             {
                 id: 2,
                 img: card2,
                 title: "Mint Pottery",
-                price: "$ 75.00 USD"
+                price: "$ 75.00 USD",
+                reviews: '5 reviews',
+                material: 'stone' 
             },
             {
                 id: 3,
                 img: card3,
                 title: "Set Of Potters",
-                price: "$ 125.00 USD"
+                price: "$ 125.00 USD",
+                reviews: '4 reviews',
+                material: 'stone'
             },
             {
                 id: 4,
                 img: card4,
                 title: "Orange Ceramic",
-                price: "$ 55.00 USD"
+                price: "$ 55.00 USD",
+                reviews: '3 reviews',
+                material: 'ceramic'
             },
             {
                 id: 5,
                 img: card5,
                 title: "Dark Bowl",
-                price: "$ 115.00 USD"
+                price: "$ 115.00 USD",
+                reviews: '2 reviews',
+                material: 'ceramic'
             },
             {
                 id: 6,
                 img: card6,
                 title: "Square Pottery",
-                price: "$ 75.00 USD"
+                price: "$ 75.00 USD",
+                reviews: '1 reviews',
+                material: 'stone'
             }
         ]
     }

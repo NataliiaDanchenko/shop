@@ -12,15 +12,18 @@ import Product from './Components/Product/Product';
 
 
 
+
 function App () {
  
   return (
     <div>
-      <Menu nav={state.header.links} logoImg={state.header.logo} basket={state.header.basket}/>
+      
+      <Menu nav={state.header.links} logoImg={state.header.logo} basket={state.header.basket} />
       <Routes>
-        <Route path="/" element={<Header title={state.header.titleH1}/>} />
+        <Route path="/" element={<Header title={state.header.titleH1} buttonHeader={state.header.titleH1.buttonHeader} buttonCard={state.header.titleH1.buttonCard}/>} />
         <Route path="/about" element={<ProductCategories prodCat={state.productCategories} potAndCer={state.potteryAndCeramic}/>} />
-        <Route path="/cards" element={<Cards title={state.productData} cards={state.productData.cards}/>} />
+
+        <Route path="/cards" element={<Cards title={state.productData} cards={state.productData.cards} />} />
         <Route path="/card/:id" element={<Product product={state.productData.cards}/>} />
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/basket/:id" element={<Basket basket={state.productData.cards}/>} />
