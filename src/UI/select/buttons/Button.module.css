@@ -1,11 +1,11 @@
-.button {
+/*.button {
     width: 200px;
     height: 60px;
     text-align: center;
     line-height: 60px;
     background-color: #AC1313;
     color: white;
-}
+}*/
 .button:hover {
     cursor: pointer;
 }

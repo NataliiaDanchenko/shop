@@ -7,17 +7,16 @@ import Button from "../../UI/select/buttons/Button";
 
 
 const Cards = (props) => {
-   
-    const [allCards, setAllCards] = useState(props.cards)
-    const [selectedSort, setSelectedSort] = useState('');
-    const [getFilter, setGetFilter] = useState(props.cards);
+
+    const [allCards, setAllCards] = useState(props.cards) // Все карточки на странице. Начальное положение
+    const [selectedSort, setSelectedSort] = useState(''); // Отсортированные карточки
+    const [getFilter, setGetFilter] = useState(props.cards); // Отфильтрованные карточки
 
     const arrCopy = structuredClone([props.cards]); // Глубокая копия массива карточек
 
-    const cardsMap = allCards.map((card, index) => <Card card={card} key={index} />)
+    const cardsMap = allCards.map((card, index) => <Card card={card} key={index} />) // Размещаем карточки
 
-
-    const x = (sort) => {
+    const getSorted = (sort) => { // Функция сортировки
         setSelectedSort(sort)
         console.log(sort)
         arrCopy.forEach(item => {
@@ -28,7 +27,11 @@ const Cards = (props) => {
         })
     }
 
-    const z = () => {
+// После сортировки нужно вернуть удаленные элементы строки, пока с этим трудности
+
+// Далее следуют две одинковые функции фильтрации, много дублирования кода. Буду сокращать
+
+    const getFilteredStone = () => {
         arrCopy.forEach(item => {
             let getFilterAll = item.filter(n => n.material === 'stone')
             setAllCards(getFilterAll)
@@ -36,7 +39,7 @@ const Cards = (props) => {
         })
     }
 
-    const a = () => {
+    const getFilteredCeramic = () => {
         arrCopy.forEach(item => {
             let getFilterAll = item.filter(n => n.material === 'ceramic')
             setAllCards(getFilterAll)
@@ -50,33 +53,34 @@ const Cards = (props) => {
                 <div className={style.titleTitle}>
                     <div className={style.overTitle}>{props.title.overTitle}</div>
                     <div className={style.title}>{props.title.title}</div>
+                    <div className={style.selected}>
+                        <Select
+                            value={selectedSort}
+                            defaultValue='Sort'
+                            onChange={getSorted}
+                            options={
+                                [
+                                    { value: 'price', name: 'By price' },
+                                    { value: 'reviews', name: 'By reviews' }
+                                ]
+                            }
+                        />
+                    </div>
 
-                    <Select
-                        value={selectedSort}
-                        defaultValue='Sort'
-                        onChange={x}
-                        options={
-                            [
-                                { value: 'price', name: 'By price' },
-                                { value: 'reviews', name: 'By reviews' }
-                            ]
-                        }
-                    />
-                    <Button 
-                        value={getFilter}
-                        onClick={z}
-                        buttons={{value: 'stone', name: 'Stone'}}/>
+                    <div className={style.button_flex}>
+                        <Button
+                            value={getFilter}
+                            onClick={getFilteredStone}
+                            buttons={{ value: 'stone', name: 'Stone' }} />
 
-                    <Button 
-                        buttons={{value: 'ceramic', name: 'Ceramic'}}
-                        onClick={a}
-                        value={getFilter}/>
-                        
-
+                        <Button
+                            buttons={{ value: 'ceramic', name: 'Ceramic' }}
+                            onClick={getFilteredCeramic}
+                            value={getFilter} />
+                    </div>
                     <div className={style.wrapper}>
 
                         {cardsMap}
-
 
                     </div>
                 </div>
@@ -84,4 +88,7 @@ const Cards = (props) => {
         </div>
     )
 }
+
+
+
 export default Cards;

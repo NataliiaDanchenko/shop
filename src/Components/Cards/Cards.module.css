@@ -1,11 +1,13 @@
 .cards {
     display: flex;
 }
+
 .title {
     font-size: 40px;
     font-weight: 700;
     padding-bottom: 50px;
 }
+
 .titleTitle {
     padding-top: 70px;
     display: flex;
@@ -13,12 +15,14 @@
     justify-content: center;
     align-items: center;
 }
+
 .overTitle {
     font-size: 14px;
     font-weight: 700;
     color: #D77474;
     padding-bottom: 30px;
 }
+
 .wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -31,9 +35,24 @@
 .wrapper img {
     width: 350px;
     height: 473px;
-  
 }
+
 .wrapper img:hover {
     border: solid #6c6c6c;
     cursor: pointer;
+}
+
+.button_flex {
+    display: flex;
+    gap: 50px;
+}
+
+.selected {
+    margin-bottom: 50px;
+}
+
+.selected select {
+    width: 200px;
+    height: 20px;
+    font-size: 16px;
 }

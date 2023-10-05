@@ -40,10 +40,10 @@ const Reviews = (props) => {
                 text: current,
                 data: date
         }
-        if(newReview.text.length > 5){
+        if(newReview.text.length > 2){
             setReviews([newReview, ...reviews]);
         }
-        else {alert("Add Text Review")}
+        else {}
         setCurrent("");
     }
 
