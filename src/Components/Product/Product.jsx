@@ -53,26 +53,25 @@ const Product = (props) => {
             <div className={style.product}>
                 <div className="container">
                     <div className={style.product_content}>
-                                    <div className={style.text}>
-                                        <div><img src={productCard.img} alt={`img-product ${productCard.id}`}/></div>
-                                        <div className={style.title_card}>{productCard.title}</div>
-                                        <div className={style.price}>{productCard.price}</div>
-                                    </div>
-                                  
+                        <div className={style.text}>
+                            <div><img src={productCard.img} alt={`img-product ${productCard.id}`}/></div>
+                            <div className={style.product_flex}>
+                                <div className={style.title_card}>{productCard.title}</div>
+                                <div className={style.price}>{productCard.price}</div>
+                                <div>
+                                    {
+                                        isProductBasket ?
+                                            <button className={style.button} onMouseDown={showBasket} onClick={addProductToBasket}>Add To Basket</button> :
+                                            <button className={style.button} onClick={addProductToBasket}>Product In the Basket</button>
+                                    }
+                                </div>
+                            </div>
 
-
+                        </div>
 
                     </div>
 
                     <div className={style.stars}></div>
-                    <div>
-                            {
-                                isProductBasket ?
-                                    <button className={style.button} onMouseDown={showBasket} onClick={addProductToBasket}>Add To Basket</button> :
-                                    <button className={style.button} onClick={addProductToBasket}>Product In the Basket</button>
-                            }
-                        </div>
-
 
                     <Reviews name={productCard.title}/>
                 </div>
